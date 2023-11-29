@@ -1,0 +1,688 @@
+/*!-------------TIPOGRAFIA----------*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+/*!-------------RESET---------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.filtro {
+    display: none;
+}
+
+.boton {
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+
+/*!-----------HEADER-------------*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .navbar {
+    background-color: #788393;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+header .navbar .container-fluid .collapse .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .navbar .container-fluid .navbar-brand h1 {
+    font-family: 'Rubik Dirt', cursive;
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+header .navbar .container-fluid .navbar-brand h1 span {
+    color: black;
+}
+
+/*!--------------MAIN INDEX-------------*/
+main .valores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+main .valores>div {
+    width: 70%;
+    height: 70%;
+    margin: 30px;
+    background-position: center;
+    color: black;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 5px solid #040f16;
+}
+
+main .valores div div {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .valores div div p {
+    padding-top: 10px;
+}
+
+/*!---------------MAIN KINESIOLOGIA-----------*/
+main .kine_musculo {
+    padding: 30px;
+}
+
+main .kine_musculo div img {
+    width: 600px;
+    height: 400px;
+}
+
+main .kine_musculo div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .kine_musculo div .info_kinemusculo {
+    width: 80%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .kine_musculo div .info_kinemusculo h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.info_kinemusculo p {
+    padding: 20px;
+    text-align: center;
+}
+
+main .neuro_adulto .info_neuro img {
+    text-align: start;
+    width: 600px;
+    height: 400px;
+}
+
+main .neuro_adulto {
+    background-color: #040f16;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .neuro_adulto .info_neuro {
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+main .neuro_adulto .info_neuro div h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+main .neuro_adulto .info_neuro p {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+main .neuro_adulto .info_neuro div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kine_respiratoria {
+    padding: 30px;
+}
+
+.kine_respiratoria img {
+    width: 600px;
+    height: 400px;
+}
+
+.kine_respiratoria>div {
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.kine_respiratoria div div {
+    width: 80%;
+    text-align: start;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+main .kine_respiratoria div div h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.kine_respiratoria div>div p {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.domicilio div img {
+    width: 600px;
+    height: 400px;
+}
+
+.domicilio {
+    padding: 30px;
+}
+
+main .domicilio>div {
+    background-color: #040f16;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+main .domicilio div div h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+main .domicilio div div p {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+main .domicilio div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*!---------------MAIN MASAJES Y RECOVERTY-----------*/
+main .masaje_relajante {
+    padding: 30px;
+}
+
+main .masaje_relajante>div img {
+    width: 600px;
+    height: 400px;
+}
+
+main .masaje_relajante>div {
+    background-color: #040f16;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .masaje_relajante div .flex_masjrelajante {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .masaje_relajante div .flex_masjrelajante .info_masjrelajante {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main .masaje_relajante div .flex_masjrelajante .info_masjrelajante h2 {
+    font-size: 25px;
+}
+
+main .masaje_relajante div .flex_masjrelajante .info_masjrelajante p {
+    padding: 5px;
+    margin: 0px;
+}
+
+.botones_masjrelajante>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.masaje_relajante div .botones_masjrelajante {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .masaje_descontracturante {
+    padding: 30px;
+
+}
+
+main .masaje_descontracturante {
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .masaje_descontracturante img {
+    width: 600px;
+    height: 400px;
+}
+
+main .masaje_descontracturante>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.masaje_descontracturante div .botones_masjdescontracturante {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .masaje_descontracturante div .info_masjdescontracturante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+main .masaje_descontracturante div .info_masjdescontracturante h2 {
+    font-size: 25px;
+}
+
+main .masaje_descontracturante div .info_masjdescontracturante p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+main .masaje_descontracturante div .botones_masjdescontracturante p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+main .masaje_descontracturate div .botones_masjdescontracturante>div {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .masaje_cranealykine {
+    background-color: #005d7c84;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .masaje_cranealykine .masaje_craneal img {
+    width: 100%;
+    height: 40%;
+    padding: 15px;
+}
+
+main .masaje_craneal {
+    background-color: #040f16;
+    width: 450px;
+    height: 650px;
+    border: 1px solid white;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main .masaje_cranealykine .masaje_craneal div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+main .masaje_cranealykine .masaje_craneal div h2 {
+    font-size: 25px;
+}
+
+main .masaje_cranealykine .masaje_craneal div p {
+    padding: 5px;
+    margin: 0px
+}
+
+main .masaje_cranealykine .masaje_kine img {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+}
+
+main .masaje_cranealykine .masaje_kine {
+    background-color: #040f16;
+    width: 450px;
+    height: 650px;
+    border: 1px solid white;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main .masaje_cranealykine .masaje_kine div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+main .masaje_cranealykine .masaje_kine div h2 {
+    font-size: 25px;
+}
+
+main .masaje_cranealykine .masaje_kine div p {
+    padding: 5px;
+    margin: 0px;
+}
+
+main .recovery {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .recovery h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+}
+
+main .recovery>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .recovery div img {
+    width: 55%;
+    height: 400px;
+    margin: 20px;
+}
+
+.recovery .info_recovery {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recovery .info_recovery .botones_recovery div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.recovery .info_recovery .botones_recovery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recovery .info_recovery {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/*!----------------MAIN RESERVA--------*/
+main .flex_reserva {
+    width: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .reserva {
+    width: 70%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 15px;
+}
+
+main .flex_reserva .reserva h2 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+
+main .flex_.reserva .reserva h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+main .flex_dudas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .flex_dudas .dudas {
+    width: 70%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+main .flex_dudas .dudas h2 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+
+/*!----------------FOOTER--------------*/
+footer {
+    background-color: #aab9cf;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+footer .piedepagina .iconos div img {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+}
+
+footer .piedepagina .iconos div p {
+    margin: 0px;
+}
+
+footer .piedepagina .horarios h2 {
+    font-weight: 200;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+}
+
+footer .piedepagina {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "iconos horarios iframe"
+        "h3 h3 h3";
+}
+
+footer .piedepagina .iconos {
+    justify-self: start;
+    align-self: start;
+    margin-top: 50px;
+    grid-area: iconos;
+}
+
+footer .piedepagina .iconos div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+footer .piedepagina .horarios {
+    justify-self: start;
+    align-self: center;
+    grid-area: horarios;
+    margin-top: 20px;
+}
+
+footer .piedepagina iframe {
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    padding: 15px;
+    grid-area: iframe;
+}
+
+footer .piedepagina h3 {
+    background-color: #005e7c;
+    color: white;
+    text-decoration: none;
+    font-family: 'Rubik Dirt', cursive;
+    border: 1px solid black;
+    margin-bottom: 0%;
+    grid-area: h3;
+}
+
+footer h3 span {
+    color: black;
+}
+
+/*!-------PSEUDO CLASES------*/
+.boton:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+.boton:active {
+    color: darkred;
+}
+
+.servicios_hermanos div .tarjetas div i:hover {
+    color: darkred;
+}
+
+.servicios_hermanos div .tarjetas div i:active {
+    color: white;
+}
+
+/*!-------PSEUDOELEMENTOS-----*/
+header h1::selection {
+    background-color: black;
+}
+
+header h1 span::selection {
+    background-color: black;
+    color: white;
+}
+
+p::selection {
+    color: white;
+    background-color: black;
+}
+
+h2::selection {
+    color: white;
+    background-color: black;
+}
+
+h2::selection {
+    color: white;
+    background-color: black;
+}
+
+
+a::selection {
+    background-color: black;
+    color: white;
+}
+
+footer .piedepagina iframe::selection {
+    background-color: black;
+}
+
+footer .piedepagina .iconos img::selection {
+    background-color: black;
+}
+
+h3::selection {
+    color: white;
+    background-color: black;
+}
+
+footer .piedepagina h3 span::selection {
+    background-color: black;
+    color: white;
+}

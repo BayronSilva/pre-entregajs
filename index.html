@@ -1,11 +1,261 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
+    <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- DESCRIPCION -->
+        <meta name="description"
+            content="Centro de kinesiología que busca otorgar los servicios de prevención, rehabilitación y bienestar en salud física lo mas personalizadas posibles, considerando los distintos factores contextuales de las personas">
+        <!-- KEYWORDS -->
+        <meta name="keywords"
+            content="kinesiologia, rehabilitacion, neurorrehabilitacion, masajes, recovery, descontracturante, relajacion, salud, ejercicios, lesion, enfermedad, domicilio, patologias">
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <!-- ICONOS BOOTSTRAP -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- ANIMACIONES -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <title>PROYECTO KINE | Servicios de Kinesiología , masajes y recovery personalizados</title>
+        <!-- PROTOCOLO OPEN GRAPH -->
+        <meta property="og:type" content="web site">
+        <!-- title -->
+        <meta property="og:title" content="PROYECTO KINE | Centro de kinesiología y Rehabilitación">
+        <!-- DESCRIPTION -->
+        <meta property="description"
+            content="Servicios de Kinesiología , masajes y recovery personalizados. Contamos con atención a domicilio.">
+        <!-- URL -->
+        <meta property="og:url" content="">
+        <!-- IMAGE -->
+        <meta property="og:image" content="">
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <h1 class="animate__animated animate__pulse"><span>PRO</span>yecto KINE</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <input type="text" id="busqueda" placeholder="Buscar servicios...">
+                        <div id="carrito-container">
+                            <h3>Carrito</h3>
+                            <ul id="carrito-lista"></ul>
+                            <p id="precio-total">Precio Total: $0</p>
+                            <button id="limpiar-carrito">Limpiar Carrito</button>
+                            <button id="confirmar-compra">Confirmar Compra</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section data-aos="fade-up" data-aos-duration="2000" class="kine_musculo servicio">
+            <div>
+                <div class="info_kinemusculo">
+                    <h2>Kinesiología Musculoesquelética</h2>
+                    <p>También conocida como kinesiología traumatológica, es subespecialidad dentro del área de la
+                        Kinesiología que se encarga del estudio, evaluación y tratamiento de las patologías
+                        músculo-esqueléticas, es decir, que afecta a músculos, huesos, tendones , ligamentos y
+                        estructuras articulares.</p>
+                    <a href="" class="boton btn-reserva">Agregar</a>
+                </div>
+                <img src="../img/kinesiologia_musculoesqueletica.jpg"
+                    alt="imagen de sesion de kinesiologia traumatologica" />
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-duration="2000" class="neuro_adulto servicio">
+            <div class="info_neuro">
+                <img src="../img/neurorehabilitacion_adulto.jpg" alt="imagen de sesion de neurorehabilitacion adulto" />
+                <div>
+                    <h2>Neurorrehabilitación Adulto</h2>
+                    <p>Es un proceso por el que las personas con alguna lesión o enfermedad del sistema nervioso puedan
+                        alcanzar una recuperación integral lo más optima posible, ayudándolo a mejorar la calidad de
+                        vida física, mental y social, minimizando las secuelas de dicha lesión</p>
+                    <a href="" class="boton btn-reserva">Agregar</a>
+                </div>
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-duration="2000" class="kine_respiratoria servicio">
+            <div>
+                <div>
+                    <h2>Kinesiología Respiratoria</h2>
+                    <p>Corresponden a una serie de tratamientos utilizados como apoyo para mejorar patologías del
+                        sistema respiratorio.
+                        Entre algunos de sus objetivos esta la resdistribución de flujos aéreos, permeabilización de vía
+                        aérea, entrenamietno de musculatura respiratoria, entre otros.
+                    </p>
+                    <a href="" class="boton btn-reserva">Agregar</a>
+                </div>
+                <img src="../img/kinesiologia_respiratoria.jpg"
+                    alt="imagen de fonendoscopio usado en evaluación respiratoria" />
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-duration="2000" class="domicilio">
+            <div class="servicios">
+                <img src="../img/kinesiologia_a_domicilio.jpg" alt="imagen de kinesiologia a domicilio servicio" />
+                <div>
+                    <h2>Kinesiología a Domicilio</h2>
+                    <p>Obten todos nuestros servicios de kinesiología en la comodidad de tu hogar, incluyendo servicios
+                        de masajes y recovery.</p>
+                    <a href="" class="boton btn-reserva">Agregar</a>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="2000" class="masaje_relajante servicio">
+            <div class="servicios">
+                <div class="flex_masjrelajante">
+                    <div class="info_masjrelajante">
+                        <h2>Masaje Relajante</h2>
+                        <p>Como su nombre lo indica su principal objetivo es generar relajación a la persona que se
+                            realiza, a través de técnicas superficiales de masoterapia.
+                            Puede ser muy útil para personas en situaciones de estrés, ansiedad, personas con dolores
+                            musculares leves e incluso con depresión.</p>
+                        <p>50 minutos: $27.000</p>
+                    </div>
+                    <div class="botones_masjrelajante">
+                        <div>
+                            <a href="" class="boton btn-reserva">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="../img/masaje_relajante.jpg" alt="imagen masaje relajante" />
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-duration="2000" class="masaje_descontracturante servicio">
+            <img src="../img/masaje_descontracturante.jpg" alt="imagen masaje descontracturante" />
+            <div>
+                <div class="info_masjdescontracturante">
+                    <h2>Masaje Descontracturante</h2>
+                    <p>Consiste en utilizar técnicas de masoterapia profundas en intensas, en comparación a un masaje de
+                        relajación. Estas técnicas van dirigidas a zonas de dolor con el objetivo de eliminar
+                        contracturas, aumentando la circulación sanguínea y de linfa, eliminando toxinas, ayuda a
+                        aliviar migrañas producidas por tensión cervical o acumulación de toxinas, entre otros
+                        beneficios.</p>
+                    <p>50 minutos: $33.000</p>
+                </div>
+                <div class="botones_masjdescontracturante">
+                    <div>
+                        <a href="" class="boton btn-reserva">Agregar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-duration="2000" class="masaje_cranealykine servicio">
+            <div class="masaje_craneal servicios">
+                <img src="../img/masaje_craneal.jpg" alt="imagen masaje craneal" />
+                <div>
+                    <h2>Masaje Craneal</h2>
+                    <P> Masaje que se realiza en zona de cabeza, cara, cuello y hombros para disminuir la tensión que se
+                        acumule en estas zonas, estas molestias pueden ser causadas por estrés, movimientos bruscos,
+                        levantar grandes cargas sobre los hombros, entre otras. </P>
+                    <p>Duración: 30 minutos.</p>
+                    <p>Valor: $20.000</p>
+                    </P>
+                    <a href="" class="boton btn-reserva">Agregar</a>
+                </div>
+            </div>
+            <div class="masaje_kine servicio">
+                <img src="../img/masaje_kinesiologo.jpg" alt="imegen masaje kinesiólogo" />
+                <div>
+                    <h2>Masaje Kinesiólogo</h2>
+                    <p>Masaje en el que el o la profesional puede utilizar herramientas terapéuticas como complemento al
+                        masaje, dependiendo de las necesidades de la persona, entre estas herramientas terapéuticas
+                        están las compresas húmedo-calientes, pistola de masajes, ventosas, punción seca,
+                        electroestimulación, botas de presoterapia, entre otras.
+                    <p>Duración: 50 minutos.</p>
+                    <p>Valor: $35.000</p>
+                    </p>
+                    <a href="" class="boton btn-reserva">Agregar</a>
+                </div>
+            </div>
+        </section>
+        <section data-aos="fade-up" data-aos-duration="2000" class="recovery servicio">
+            <h2>Recovery</h2>
+            <div>
+                <img src="../img/botas_recovery.jpg" class="img_botas"
+                    alt="imagen persona usando botas de presoterapia" />
+                <img src="../img/masaje_recovery.jpg" class="img_masjrecovery" alt="imagen de masaje" />
+            </div>
+            <div class="info_recovery">
+                <p>También conocido como trabajo regenerativo, ha tomado cada vez más importancia entre deportistas ya
+                    sea profesionales o amateurs, tiene como objetivo, regenerar y flexibilizar la musculatura exigida
+                    durante los entrenamientos y la competencia. Muy importante para evitar lesiones y mejorar el
+                    rendimiento deportivo. En PROyecto KINE se elaboración dos planes de Recovery.</p>
+                <p>Plan A: Sesión de masoterapia descontracturante 30 minutos + 15 minutos de botas de presoterapia.
+                    Valor: $30.000</p>
+                <p>Plan B: Sesión de masaje kinesiólogo + 15 minutos de botas de presoterapia. Valor: $45.000</p>
+                <div class="botones_recovery">
+                    <div>
+                        <p>Plan A</p>
+                        <a href= "" class="boton btn-reserva">Agregar</a>
+                    </div>
+                    <div>
+                        <p>Plan B</p>
+                        <a href="" class="boton btn-reserva">Agregar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="2000" class="contenedor_valores">
+            <div class="valores">
+                <div>
+                    <h2>Valores</h2>
+                    <p>Valores por sesión de kinesiología musculoesquelética, neurorrehabilitación y kinesiología
+                        respiratoria: $30.000</p>
+                    <p>Valores por sesión de kinesiología a domicilio: $50.000.</p>
+                    <p>Servicios de Kinesiología antes descritos son reembolsables con Isapres, siempre y cuando
+                        paciente cuente con orden médica.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="piedepagina">
+            <div class="iconos">
+                <div>
+                    <img src="./img/telefono_icono.png" alt="icono telefono" />
+                    <p> +569 98628888</p>
+                </div>
+                <div>
+                    <img src="./img/email_icono.png" alt="icono email" />
+                    <p>Kineb.silvah@gmail.com</p>
+                </div>
+                <div>
+                    <img src="./img/locacion_icono.png" alt="icono direccion" />
+                    <p>Américo Vespucio #1101, Maipú</p>
+                </div>
+            </div>
+            <div class="horarios">
+                <h2>Horarios</h2>
+                <p>Lunes a Viernes: 08:00 - 19:00 hrs</p>
+                <p>Sábados: 12:00 - 17:00 hrs</p>
+            </div>
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.924211465316!2d-70.75874452432652!3d-33.47732389888895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c31bb0b64fa9%3A0x979a2d6dc711cad3!2sAv.%20Am%C3%A9rico%20Vespucio%201101%2C%20Maip%C3%BA%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1694046628663!5m2!1ses!2scl"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></src=>" frameborder="0"></iframe>
+            </div>
+            <h3><span>PRO</span>yecto KINE</h3>
+        </div>
+    </footer>
+    <!-- JS -->
     <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,116 +1,131 @@
 
-class Servicio {
-    constructor(nombre, duracion, precio) {
-        this.nombre = nombre;
-        this.duracion = duracion;
-        this.precio = precio;
-    }
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const carritoLista = document.getElementById("carrito-lista");
+    const precioTotalElemento = document.getElementById("precio-total");
 
-const serviciosDisponibles = [
-    new Servicio("kinesiologia", 50, 35000),
-    new Servicio("kinesiologia a domicilio", 50, 50000),
-    new Servicio("masaje de relajacion 30 minutos", 30, 20000),
-    new Servicio("masaje de relajacion 50 minutos", 50, 30000),
-    new Servicio("masaje descontracturante 30 minutos", 30, 20000),
-    new Servicio("masaje descontracturante 50 minutos", 50, 33000),
-    new Servicio("masaje craneal", 30, 20000),
-    new Servicio("masaje kinesiologo", 50, 35000),
-    new Servicio("recovery plan A", 45, 30000),
-    new Servicio("recovery plan B", 65, 45000),
-];
+    // Lista de servicios disponibles
+    const servicios = [
+        { nombre: "Kinesiología Musculoesquelética", precio: 35000 },
+        { nombre: "Neurorrehabilitación Adulto", precio: 35000 },
+        { nombre: "Kinesiologia respiratoria", precio: 35000 },
+        { nombre: "Kinesiología a domicilio", precio: 50000 },
+        { nombre: "masaje relajación", precio: 27000 },
+        { nombre: "masaje descontracturante", precio: 33000 },
+        { nombre: "masaje craneal", precio: 20000 },
+        { nombre: "masaje kinesiólogo", precio: 35000 },
+        { nombre: "Recovery plan A", precio: 30000 },
+        { nombre: "Recovery plan B", precio: 45000 }
+    ];
 
-console.log(serviciosDisponibles);
+    // Barra de busqueda y operador ternario
+    document.addEventListener("input", (e) => {
+        if (e.target.matches("#busqueda")) {
+            const filtro = e.target.value.toLowerCase();
+            document.querySelectorAll(".servicio").forEach((atencion) => {
+                atencion.textContent.toLowerCase().includes(filtro)
+                    ? atencion.classList.remove("filtro")
+                    : atencion.classList.add("filtro");
+            });
+        }
+    });
 
-function saludar() {
-    let nombre = prompt("Ingrese su nombre");
-    alert("Hola " + nombre);
-}
-saludar();
+    // Agregar al carrito
+    document.querySelectorAll(".btn-reserva").forEach((botonReserva, index) => {
+        botonReserva.addEventListener("click", (e) => {
+            e.preventDefault();
+            const servicio = servicios[index];
+            agregarAlCarrito(servicio);
+        });
+    });
 
-function buscarServicio() {
-    let serviciosDeseados = [];
-    let operacionCancelada = false;
+    // Función para agregar un servicio al carrito
+    function agregarAlCarrito(servicio) {
+        const nombreServicio = servicio.nombre;
+        const listItem = carritoLista.querySelector(`li[data-nombre="${nombreServicio}"]`);
 
-    while (!operacionCancelada) {
-        let busqueda = prompt("Ingrese servicio que desea agregar").toLowerCase();
-
-        const encontrados = serviciosDisponibles.filter(servicio => servicio.nombre.toLowerCase().includes(busqueda));
-
-        if (encontrados.length > 0) {
-            console.log("Servicios encontrados:");
-            encontrados.forEach((servicio, index) =>
-                console.log("  " + (index + 1) + ". Nombre: " + servicio.nombre + ", Duración: " + servicio.duracion + " minutos, Precio: $" + servicio.precio)
-            );
-
-            let mensaje = "Servicios encontrados:\n";
-            encontrados.forEach((servicio, index) =>
-                mensaje += "  " + (index + 1) + ". Nombre: " + servicio.nombre + ", Duración: " + servicio.duracion + " minutos, Precio: $" + servicio.precio + "\n"
-            );
-            alert(mensaje);
-
-            let seleccion = parseInt (prompt("Seleccione el número del servicio que desea agregar:"));
-
-            if (!Number.isNaN(Number(seleccion)) && seleccion >= 1 && seleccion <= encontrados.length) {
-                serviciosDeseados.push(encontrados[seleccion - 1]);
-            } else {
-                alert("Número de servicio no válido. Operación cancelada.");
-                operacionCancelada = true;
-            }
+        if (listItem) {
+            // Para aumentar cantidad de servicio en carrito
+            const cantidadElemento = listItem.querySelector(".cantidad");
+            let cantidad = parseInt(cantidadElemento.textContent);
+            cantidad++;
+            cantidadElemento.textContent = cantidad;
         } else {
-            alert("Servicio no encontrado.");
+            // Si el servicio no está en el carrito, agregarlo
+            const listItem = document.createElement("li");
 
-            let intentarNuevamente = prompt("¿Desea buscar nuevamente? (Ingrese 'si' o 'no')").toLowerCase();
-            if (intentarNuevamente !== "si") {
-                alert("Operación cancelada.");
-                operacionCancelada = true;
-            }
+            const eliminarBtn = document.createElement("button");
+            eliminarBtn.textContent = "-";
+            eliminarBtn.addEventListener("click", () => {
+                eliminarDelCarrito(listItem);
+            });
+            listItem.appendChild(eliminarBtn);
+
+            const cantidadElemento = document.createElement("span");
+            cantidadElemento.textContent = "1";
+            cantidadElemento.classList.add("cantidad");
+            listItem.appendChild(cantidadElemento);
+
+            const agregarBtn = document.createElement("button");
+            agregarBtn.textContent = "+";
+            agregarBtn.addEventListener("click", () => {
+                agregarAlCarrito(servicio);
+            });
+            listItem.appendChild(agregarBtn);
+
+            const nombreElemento = document.createElement("span");
+            nombreElemento.textContent = nombreServicio;
+            listItem.appendChild(nombreElemento);
+
+            const precioElemento = document.createElement("span");
+            precioElemento.textContent = `$${servicio.precio.toFixed(2)}`;
+            listItem.appendChild(precioElemento);
+
+            listItem.setAttribute("data-nombre", nombreServicio);
+            listItem.setAttribute("data-precio", servicio.precio);
+
+            carritoLista.appendChild(listItem);
         }
 
-        let respuesta = prompt("¿Desea agregar otro servicio? (Ingrese 'si' o 'no')");
-        if (respuesta.toLowerCase() !== "si") {
-            let revisarServicios = prompt(`Servicios seleccionados:\n${obtenerDetalles(serviciosDeseados)}\n¿Desea revisar y confirmar los servicios seleccionados? (Ingrese 'si' o 'no')`);
-            if (revisarServicios.toLowerCase() === "si") {
-
-                const precioTotal = calcularPrecioTotal(serviciosDeseados);
-                alert("Servicios seleccionados:\n" + obtenerDetalles(serviciosDeseados) + "\nPrecio total: $" + precioTotal);
-
-                let eliminarServicio = prompt("¿Desea eliminar algún servicio? (Ingrese 'si' o 'no')");
-                if (eliminarServicio.toLowerCase() === "si") {
-
-                    let serviciosParaEliminar = prompt(`Servicios seleccionados:\n${obtenerDetalles(serviciosDeseados)}\nIngrese el número del servicio que desea eliminar:`);
-                    serviciosParaEliminar = parseInt(serviciosParaEliminar);
-
-                    if (!Number.isNaN(Number(serviciosParaEliminar)) && serviciosParaEliminar >= 1 && serviciosParaEliminar <= serviciosDeseados.length) {
-                        const servicioEliminado = serviciosDeseados.splice(serviciosParaEliminar - 1, 1)[0];
-                        alert("Servicio " + servicioEliminado.nombre + " eliminado con éxito.");
-                    } else {
-                        alert("Número de servicio no válido. Operación cancelada.");
-                        operacionCancelada = true;
-                    }
-                }
-
-                let confirmarCompra = prompt("¿Desea confirmar? (Ingrese 'si' o 'no')");
-                if (confirmarCompra.toLowerCase() === "si") {
-                    alert("Gracias por confiar en nosotros. Hasta luego.");
-                    operacionCancelada = true;
-                }
-            }
-            operacionCancelada = true;
-        }
+        actualizarPrecioTotal();
     }
-}
 
-function calcularPrecioTotal(servicios) {
-    return servicios.reduce(function (total, servicio) {
-        return total + servicio.precio;
-    }, 0);
-}
+    // Función para eliminar un servicio del carrito
+    function eliminarDelCarrito(item) {
+        const cantidadElemento = item.querySelector(".cantidad");
+        let cantidad = parseInt(cantidadElemento.textContent);
+        if (cantidad > 1) {
+            // Si hay más de un servicio, disminuir cantidad
+            cantidad--;
+            cantidadElemento.textContent = cantidad;
+        } else {
+            // Si hay solo un servicio, eliminar el elemento del carrito
+            carritoLista.removeChild(item);
+        }
+        actualizarPrecioTotal();
+    }
 
-function obtenerDetalles(servicios) {
-    return servicios.map(function (servicio) {
-        return "Nombre: " + servicio.nombre + ", Duración: " + servicio.duracion + " minutos, Precio: $" + servicio.precio;
-    }).join('\n');
-}
+    // Función para actualizar el precio total en el carrito
+    function actualizarPrecioTotal() {
+        const itemsEnCarrito = carritoLista.querySelectorAll("li");
+        let precioTotal = 0;
 
-buscarServicio();
+        itemsEnCarrito.forEach((item) => {
+            const cantidad = parseInt(item.querySelector(".cantidad").textContent);
+            const precio = parseFloat(item.getAttribute("data-precio"));
+            precioTotal += cantidad * precio;
+        });
+
+        precioTotalElemento.textContent = `Precio Total: $${Math.round(precioTotal)}`;
+    }
+
+    // Limpiar carrito
+    document.getElementById("limpiar-carrito").addEventListener("click", () => {
+        carritoLista.innerHTML = "";
+        actualizarPrecioTotal();
+    });
+
+    // Confirmar compra 
+    document.getElementById("confirmar-compra").addEventListener("click", () => {
+        alert("Compra confirmada. Nos contactaremos con usted para agendar hora");
+    });
+});
